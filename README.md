@@ -1,2 +1,7 @@
 # KyleAldrich_ME433_S17
-ME433 Homework and Projects
+
+Kyle Aldrich
+Northwestern University
+ME 433 - Advanced Mechatronics Course
+
+This Repo contains Homework assignments as well as the final project for NU's advanced mechatronics course
