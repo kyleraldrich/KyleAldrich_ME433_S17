@@ -20,7 +20,7 @@
 #pragma config WDTPS = PS1 // slowest wdt
 #pragma config WINDIS = OFF // no wdt window
 #pragma config FWDTEN = OFF // wdt off by default
-#pragma config FWDTWINSZ = WISZ_25 // wdt window at 25%
+#pragma config FWDTWINSZ = WINSZ_25 // wdt window at 25%
 
 // DEVCFG2 - get the CPU clock to 48MHz
 #pragma config FPLLIDIV = DIV_10 // divide input clock to be in range 4-5MHz
@@ -63,8 +63,11 @@ int main() {
 
     while(1) {
 	    _CP0_SET_COUNT(0);
-        int a = 0;
-        for (int i = 0; i < 1000; i++){}
+        int i = 0;
+        while (i<48){
+            i++;
+        }
+        
         LATAbits.LATA4 = !LATAbits.LATA4;
         // use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
 		  // remember the core timer runs at half the CPU speed
