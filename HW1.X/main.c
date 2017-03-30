@@ -64,7 +64,7 @@ int main() {
     while(1) {
 	    _CP0_SET_COUNT(0);
         int i = 0;
-        while (i<48){
+        while (i<480){
             i++;
         }
         
