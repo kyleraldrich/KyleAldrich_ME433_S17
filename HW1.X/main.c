@@ -62,8 +62,8 @@ int main() {
     __builtin_enable_interrupts();
 
     while(1) {
-	    while(LATBbits.LATB4){
-            LATAbits.LATA4 = 0;     // A4 LED is OFF
+	    while(!PORTBbits.RB4){
+            LATAbits.LATA4 = 0;     // A4 LED is off
         }
         _CP0_SET_COUNT(0);
         int i = 0;
