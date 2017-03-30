@@ -54,11 +54,19 @@ int main() {
     DDPCONbits.JTAGEN = 0;
 
     // do your TRIS and LAT commands here
+    TRISAbits.TRISA4 = 0;   // A4 is the LED
+    TRISBbits.TRISB4 = 1;   // B4 is the button
+    
+    LATAbits.LATA4 = 1;     // A4 LED is on
 
     __builtin_enable_interrupts();
 
     while(1) {
-	    // use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
+	    _CP0_SET_COUNT(0);
+        int a = 0;
+        for (int i = 0; i < 1000; i++){}
+        LATAbits.LATA4 = !LATAbits.LATA4;
+        // use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
 		  // remember the core timer runs at half the CPU speed
     }
 }
